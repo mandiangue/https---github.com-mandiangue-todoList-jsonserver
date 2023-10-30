@@ -18,7 +18,7 @@ const modalDesc= document.querySelector('.modal-desc')
 
 //URL FROM json server
 const url = 'http://localhost:3000/todos'
-let checked= false
+let checked= 'unchecked'
 //EVENT LISTENERS LOAD TODOS 
 //window.addEventListener('DOMContentLoaded',getTodos)
 
@@ -26,20 +26,21 @@ let checked= false
 formu.addEventListener("submit", postTache);
 getTodos()
 
-//EVENT LISTENERS for CROSSING OUT TASK
+//EVENT LISTENERS for CROSSING OUT TASK and updated on data base
+
 listItems.addEventListener("click", async(e) => {
  
   const li = e.target.tagName === "LI";
   if (li) {
     e.target.classList.toggle("checked");
-    checked=true
+    checked= 'checked'
   } if (e.target.classList.contains('checked')){
        const id = e.target.id
      const res= await fetch(`${url}/${id}`, {
         method: 'PATCH',
         headers:{'Content-Type':'application/json'},
         body:JSON.stringify({
-          checked: checked
+          checked: 'checked'
         })
       })
        await res.json()
@@ -66,6 +67,8 @@ function postTache(e) {
         const attr = document.createAttribute("id");
         attr.value = item.id
         listElement.setAttributeNode(attr);
+
+        
         listElement.innerHTML = `${item.title}
         
         <i class="fa-regular fa-eye fa-modal" data-bs-toggle="modal" data-bs-target="#taskModal"></i>
@@ -74,7 +77,11 @@ function postTache(e) {
     
    
    listItems.insertBefore(listElement, listItems.children[0]);
-      
+      //remain checked list on bottom list
+        if (item.checked == 'checked') {
+          listElement.classList.add("checked")
+          listItems.appendChild(listElement)
+        }
 
    //Open task details
         listElement.addEventListener("click", (e) => {
@@ -108,7 +115,7 @@ function postTache(e) {
           body: JSON.stringify({
             title: inputValue,
             description: describe,
-            checked:false
+            checked:'unchecked'
           })
        
         })
