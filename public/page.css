@@ -1,0 +1,187 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+/**--------------------------HEADER-------------------------------------  */
+.pageBienvenu {
+    text-align: center;
+    font-size: 2rem;
+    background-color: rgb(69, 89, 116);
+    color: #fff;
+    padding: 2rem;
+    margin-top: 0 2.5rem;
+}
+/**---------------------------THE CONTAINER------------------------------------------*/
+.main {
+    width: 90%;
+    margin: 5rem auto;
+    border: 20px solid rgb(86, 139, 188);
+    background-color: rgb(254, 254, 254);
+    border-radius: 12Opx;
+}
+/**--------------------------FORM FOR ADDING TASK---------------------------- */
+button.collapseBtn {
+    width: 300px;
+    height: 50px;
+    margin: 2rem auto;
+    color: #fff;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+}
+
+.tache {
+    text-align: center;
+    font-size: 1.5rem;
+    margin: 1.3rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+
+
+#formulaire {
+    width: 45vw;
+    height: auto;
+    display: block;
+    border-radius: 5px;
+    margin: 2rem auto;
+
+}
+
+#forme {
+    margin-top: -1.5rem;
+}
+
+input:focus-within {
+    background: rgb(251, 254, 255);
+    border-radius: .5rem;
+}
+
+input[type=text] {
+    width: 60%;
+    margin: 1.5rem auto;
+    padding: .4rem;
+    border: .1px solid#ccc;
+
+
+}
+
+input:focus[type=text] {
+    outline: none;
+}
+
+textarea {
+    height: 100px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+.description {
+    width: 60%;
+    resize: none;
+}
+
+.btnSubmit {
+    background-color: rgba(5, 100, 152, 0.82);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-top-right-radius: .5rem;
+    border-bottom-right-radius: .5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
+}
+
+/** -------------------------------TASKS LIST--------------------------  */
+.list-items {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 2rem;
+    position: relative;
+  
+
+}
+
+.list-items li.checked {
+    text-decoration: line-through;
+    color: rgb(247, 23, 23);
+}
+
+.list-items li.checked::before {
+    content: '';
+    position: absolute;
+    border-color: #e70e0e;
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    height: 15px;
+    width: 7px;
+    display: flex;
+    left: 4rem;
+   
+}
+
+.list-items li {
+    color: rgb(71, 68, 68);
+    margin: 1rem 2.5rem auto;
+    padding: .4rem 2.7rem;
+    width: 40vw;
+    box-shadow: .5px .5px 2px rgb(185, 185, 185);
+    font-size: 1.2rem;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    list-style-type: none;
+
+   
+    
+
+}
+
+li:hover {
+    background-color: rgb(206, 234, 251);
+    cursor: pointer;
+}
+.fa-eye{
+    cursor: pointer;
+    position:absolute;
+    right: 6rem;
+}
+
+.deleteBtn {
+    color: rgb(232, 83, 14);
+    font-size: 1rem;
+    cursor: pointer;
+    position: absolute;
+    right: 3rem;
+
+}
+
+
+.message {
+    width: 300px;
+    text-align: center;
+    margin: 0 auto;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1rem;
+    padding: .2rem;
+}
+
+.alert-success {
+    background-color: rgb(4, 119, 36);
+    color: #fff;
+}
+
+.alert-danger {
+    background-color: rgb(225, 10, 10);
+    color: #fff;
+}
