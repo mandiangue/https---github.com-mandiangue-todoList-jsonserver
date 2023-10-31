@@ -18,18 +18,18 @@ const modalDesc= document.querySelector('.modal-desc')
 
 //URL FROM json server
 const url = 'http://localhost:3000/todos'
-let checked= 'unchecked'
+
 //EVENT LISTENERS LOAD TODOS 
-//window.addEventListener('DOMContentLoaded',getTodos)
+window.addEventListener('DOMContentLoaded',getTodos)
 
 //EVENT LISTENERS (submit)
 formu.addEventListener("submit", postTache);
-getTodos()
+
 
 //EVENT LISTENERS for CROSSING OUT TASK and updated on data base
 
 listItems.addEventListener("click", async(e) => {
- 
+ let checked= 'unchecked'
   const li = e.target.tagName === "LI";
   if (li) {
     e.target.classList.toggle("checked");
